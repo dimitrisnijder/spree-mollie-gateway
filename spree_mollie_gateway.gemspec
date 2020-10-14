@@ -31,11 +31,9 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
   spec.required_ruby_version = '>= 2.3.8'
 
-  spree_version = '>= 3.5.0', '< 5.0'
-  spec.add_dependency 'spree_backend', spree_version
-  spec.add_dependency 'spree_core', spree_version
-  spec.add_dependency 'spree_frontend', spree_version
-  spec.add_dependency 'spree_extension'
+  spec.add_dependency 'solidus_core', '~> 2.6'
+  spec.add_dependency 'solidus_support'
+  spec.add_dependency 'mollie-api-ruby'
 
   spec.add_development_dependency 'appraisal'
   spec.add_development_dependency 'bundler', '~> 1.16'
