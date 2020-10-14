@@ -17,5 +17,3 @@ module Spree::Payment::GatewayOptionsDecorator
     ]
   end
 end
-
-Spree::Payment::GatewayOptions.prepend(Spree::Payment::GatewayOptionsDecorator)
