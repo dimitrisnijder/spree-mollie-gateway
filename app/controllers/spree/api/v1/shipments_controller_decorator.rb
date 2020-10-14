@@ -1,4 +1,4 @@
-module Spree::Api::V1::ShipmentsControllerDecorator
+module Spree::Api::ShipmentsController
   def ship
     unless @shipment.tracking.present?
       # We should enforce entering tracking details, otherwise shipments cannot
@@ -11,4 +11,4 @@ module Spree::Api::V1::ShipmentsControllerDecorator
   end
 end
 
-Spree::Api::V1::ShipmentsController.prepend(Spree::Api::V1::ShipmentsControllerDecorator)
+Spree::Api::ShipmentsController.prepend(Spree::Api::ShipmentsControllerDecorator)
