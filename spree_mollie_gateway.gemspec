@@ -33,7 +33,6 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'solidus_core', '~> 2.6'
   spec.add_dependency 'solidus_support'
-  spec.add_dependency 'mollie-api-ruby'
 
   spec.add_development_dependency 'appraisal'
   spec.add_development_dependency 'bundler', '~> 1.16'
