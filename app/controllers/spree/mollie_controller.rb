@@ -8,7 +8,7 @@ module Spree
       order_number, payment_number = split_payment_identifier params[:order_number]
       payment = Spree::Payment.find_by_number payment_number
       order = Spree::Order.find_by_number order_number
-      mollie = Spree::PaymentMethod.find_by_type 'Spree::Gateway::MollieGateway'
+      mollie = Spree::PaymentMethod.find_by_type 'Spree::PaymentMethod::MolliePayments'
       mollie.update_payment_status payment
 
       MollieLogger.debug("Redirect URL visited for order #{params[:order_number]}")
@@ -25,7 +25,7 @@ module Spree
       MollieLogger.debug("Webhook called for Mollie order #{params[:id]}")
 
       payment = Spree::MolliePaymentSource.find_by_payment_id(params[:id]).payments.first
-      mollie = Spree::PaymentMethod.find_by_type 'Spree::Gateway::MollieGateway'
+      mollie = Spree::PaymentMethod.find_by_type 'Spree::PaymentMethod::MolliePayments'
       mollie.update_payment_status payment
 
       head :ok

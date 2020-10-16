@@ -48,7 +48,7 @@ module Spree
       end
 
       def gateway
-        Spree::PaymentMethod.find_by_type 'Spree::Gateway::MollieGateway'
+        Spree::PaymentMethod.find_by_type 'Spree::PaymentMethod::MolliePayments'
       end
 
       def api_key

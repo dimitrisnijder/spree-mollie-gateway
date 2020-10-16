@@ -26,7 +26,7 @@ module Spree::OrderDecorator
   end
 
   def is_paid_with_mollie?
-    payments.any? && payments.last&.payment_method&.type == 'Spree::Gateway::MollieGateway'
+    payments.any? && payments.last&.payment_method&.type == 'Spree::PaymentMethod::MolliePayments'
   end
 
   def send_confirmation_email!

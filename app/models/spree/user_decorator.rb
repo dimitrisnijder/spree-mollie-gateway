@@ -10,7 +10,7 @@ module Spree::UserDecorator
     # Don't create Mollie customers if spree_auth_devise is not installed.
     return unless defined? Spree::User
 
-    mollie_gateway = Spree::PaymentMethod.find_by_type 'Spree::Gateway::MollieGateway'
+    mollie_gateway = Spree::PaymentMethod.find_by_type 'Spree::PaymentMethod::MolliePayments'
     return unless mollie_gateway&.active?
 
     mollie_customer = mollie_gateway.create_customer(self)

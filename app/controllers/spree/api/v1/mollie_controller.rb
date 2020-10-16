@@ -3,7 +3,7 @@ module Spree
     module V1
       class MollieController < BaseController
         def methods
-          mollie = Spree::PaymentMethod.find_by_type 'Spree::Gateway::MollieGateway'
+          mollie = Spree::PaymentMethod.find_by_type 'Spree::PaymentMethod::MolliePayments'
           payment_methods = mollie.available_methods(methods_params).map(&:attributes)
 
           render json: payment_methods

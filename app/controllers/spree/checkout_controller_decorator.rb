@@ -27,7 +27,7 @@ module Spree
 
     def paying_with_mollie?
       payment_method = PaymentMethod.find(payment_method_id_param)
-      payment_method.is_a? Gateway::MollieGateway
+      payment_method.is_a? PaymentMethod::MolliePayments
     end
 
     def payment_params_valid?

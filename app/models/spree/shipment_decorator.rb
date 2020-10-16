@@ -93,7 +93,7 @@ module Spree
     end
 
     def gateway_api_key
-      gateway = Spree::PaymentMethod.find_by_type 'Spree::Gateway::MollieGateway'
+      gateway = Spree::PaymentMethod.find_by_type 'Spree::PaymentMethod::MolliePayments'
       gateway.get_preference(:api_key)
     end
   end

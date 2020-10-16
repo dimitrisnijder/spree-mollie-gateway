@@ -1,6 +1,6 @@
 module Spree::PaymentDecorator
   def transaction_id
-    if payment_method.is_a? Spree::Gateway::MollieGateway
+    if payment_method.is_a? Spree::PaymentMethod::MolliePayments
       source.transaction_id
     else
       response_code
