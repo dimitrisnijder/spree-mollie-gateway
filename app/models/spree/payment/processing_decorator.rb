@@ -1,7 +1,7 @@
 module Spree::Payment::ProcessingDecorator
   
   def process!
-    if payment_method.is_a? Spree::Gateway::MollieGateway
+    if payment_method.is_a? Spree::PaymentMethod::MolliePayments
       process_with_mollie
     else
       super
@@ -9,7 +9,7 @@ module Spree::Payment::ProcessingDecorator
   end
 
   def cancel!
-    if payment_method.is_a? Spree::Gateway::MollieGateway
+    if payment_method.is_a? Spree::PaymentMethod::MolliePayments
       cancel_with_mollie
     else
       super
