@@ -57,7 +57,7 @@ module Spree
 
       begin
         # First of all, invalidate all previous Mollie orders to prevent multiple paid orders
-        invalidate_previous_orders(gateway_options[:order].id)
+        #invalidate_previous_orders(gateway_options[:order].id)
 
         # Create a new Mollie order and update the payment source
         order_params = prepare_order_params(money, source, gateway_options)
